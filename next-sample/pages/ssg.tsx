@@ -1,5 +1,5 @@
 // 型のために導入
-import {NextPage} from 'next'
+import {NextPage, GetStaticProps} from 'next'
 import Head from 'next/head'
 
 type SSGProps = {}
@@ -18,5 +18,17 @@ const SSG: NextPage<SSGProps> = () => {
             </main>
         </div>
     )
+}
+
+export const getStaticProps: GetStaticProps<SSGProps> =async (context) => {
+    const timestamp = new Date().toLocaleString()
+    const message = `${timestamp}`
+    console.log(message)
+    return {
+        props: {
+            message,
+        },
+    }
+
 }
 export default SSG
