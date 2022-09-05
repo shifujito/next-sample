@@ -22,13 +22,12 @@ const SSG: NextPage<SSGProps> = () => {
 
 export const getStaticProps: GetStaticProps<SSGProps> =async (context) => {
     const timestamp = new Date().toLocaleString()
-    const message = `${timestamp}`
+    const message = `${timestamp}getStaticPropsが実行されました。`
     console.log(message)
     return {
         props: {
             message,
         },
     }
-
 }
 export default SSG
