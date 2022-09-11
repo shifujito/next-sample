@@ -6,16 +6,13 @@ function Sayhello(){
     useEffect(() => {
         fetch('api/hello').then((res) => {
             res.json()
-            console.log(res.json())
-        }).then((profile) => {
-            console.log(profile)
-            setDate(profile)
+            console.log(res)
         })
     },[])
 
     return (
         <div>
-            hello {data.name}
+            hello
         </div>
     )
 }
